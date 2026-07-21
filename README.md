@@ -65,71 +65,105 @@ The primary users are: **registered application users** (who submit PAN verifica
 
 ### Public / marketing pages
 
-**Landing hero**
-![Landing hero](docs/screenshots/01-landing-hero.png)
+### Landing Page — Hero
+Real-time PAN verification pitch with a live preview of a successful verification.
 
-**Features section**
+![Landing page hero](docs/screenshots/01-landing-hero.png)
+
+### Features
+Everything the platform offers — real-time verification, JWT security, admin analytics, exportable reports, audit trail, and role-based access.
+
 ![Features section](docs/screenshots/02-features.png)
 
-**Process & benefits**
-![Process and benefits](docs/screenshots/03-process-benefits.png)
+### Process & Benefits
+A four-step walkthrough of how a PAN gets verified, plus the compliance and integration benefits.
 
-**FAQ & call-to-action**
-![FAQ and CTA](docs/screenshots/04-faq-cta.png)
+![Process and benefits section](docs/screenshots/03-process-benefits.png)
 
-**Footer**
+### FAQ & Call to Action
+Common questions answered, with a call to action to create an account and start verifying.
+
+![FAQ and CTA section](docs/screenshots/04-faq-cta.png)
+
+### Footer
+Product links and contact details.
+
 ![Footer](docs/screenshots/05-footer.png)
 
-### Authentication
+### Register
+New user sign-up form — full name, email, username, and password.
 
-**User registration**
-![Register](docs/screenshots/06-register.png)
+![Register page](docs/screenshots/06-register.png)
 
-**User login**
-![Login](docs/screenshots/07-login.png)
+### Login
+Sign-in form with remember-me, forgot password, and a separate admin login path.
 
-**Admin login**
-![Admin login](docs/screenshots/15-admin-login.png)
+![Login page](docs/screenshots/07-login.png)
 
-### End-user application (maps to the `USER` role endpoints)
+### User Dashboard
+Verification stats at a glance, recent verifications table, and a quick-verify shortcut.
 
-**Dashboard**
-![Dashboard](docs/screenshots/08-dashboard.png)
+![User dashboard](docs/screenshots/08-dashboard.png)
 
-**Verify a PAN** — the UI for `POST /api/pan/verify`
-![Verify PAN](docs/screenshots/09-verify-pan.png)
+### Verify PAN
+The verification form (PAN number, name, father's name, DOB) with a live success result panel.
 
-**Verification history** — the UI for `GET /api/pan/history`
-![History](docs/screenshots/10-history.png)
+![Verify PAN page](docs/screenshots/09-verify-pan.png)
 
-**Reports screen** — the UI that triggers `GET /api/report/pdf` / `GET /api/report/excel`
-![Reports](docs/screenshots/11-reports.png)
+### Verification History
+Searchable table of past verifications with CSV/PDF export and refresh.
 
-**Generated PDF report** — output of `PdfGenerator` (iText)
-![PDF report](docs/screenshots/12-pdf-report.png)
+![Verification history page](docs/screenshots/10-history.png)
 
-**Generated Excel report** — output of `ExcelGenerator` (Apache POI)
-![Excel report](docs/screenshots/13-excel-report.png)
+### Reports
+One-click download of the full verification history as a PDF or Excel report.
 
-**Profile page**
-![Profile](docs/screenshots/14-profile.png)
+![Reports page](docs/screenshots/11-reports.png)
 
-### Admin console (maps to the `ADMIN`-only endpoints)
+### PDF Report
+Generated PAN Verification Report showing total/valid/invalid/pending counts and a per-record table (PAN number, status, verified-at timestamp).
 
-**Admin dashboard** — the UI for `GET /api/admin/dashboard` / `GET /api/admin/stats`
+![PDF report output](docs/screenshots/12-pdf-report.png)
+
+### Excel Report
+The same verification data exported as a filterable `.xlsx` workbook with summary counts and a sortable records table.
+
+![Excel report output](docs/screenshots/13-excel-report.png)
+
+### Profile
+View-only account profile — email, role, avatar, and a change-password form.
+
+![Profile page](docs/screenshots/14-profile.png)
+
+### Admin Login
+Separate restricted sign-in for administrators, with audit-logged sessions.
+
+![Admin login page](docs/screenshots/15-admin-login.png)
+
+### Admin Dashboard
+Admin overview with total users, total verifications, success rate, failed requests, PAN-series/volume/success-failure charts, and recent activity.
+
 ![Admin dashboard](docs/screenshots/16-admin-dashboard.png)
 
-**Admin — all verifications** — the UI for `GET /api/pan/history` seen with `ROLE_ADMIN` (returns every user's records)
-![Admin verifications](docs/screenshots/17-admin-verifications.png)
+### Admin — All Verifications
+Full cross-user verification list with search by PAN, showing name, father's name, DOB, submitting user, PAN status, and result.
 
-**Admin — user management**
-![Admin users](docs/screenshots/18-admin-users.png)
+![Admin all verifications](docs/screenshots/17-admin-verifications.png)
 
-**Admin — reports**
-![Admin reports](docs/screenshots/19-admin-reports.png)
+### Admin — Users
+Registered user count with a table of active users derived from verification activity (username, full name, email, verification count).
 
-**Admin dashboard — light theme**
-![Admin dashboard light theme](docs/screenshots/20-admin-dashboard-light.png)
+![Admin users page](docs/screenshots/18-admin-users.png)
+
+### Admin — Reports
+Admin-side download hub for the PDF and Excel verification reports.
+
+![Admin reports page](docs/screenshots/19-admin-reports.png)
+
+### Light Theme
+The application also supports a light theme, toggled from the top bar.
+
+![Admin dashboard in light theme](docs/screenshots/20-admin-dashboard-light.png)
 
 💡 **Interview angle:** if asked "does this project have a UI?", the honest, precise answer is: *"The repository I'm walking you through is the backend REST API only. There's a companion frontend — you can tell from the CORS config allowing a Vite dev server and from the 20 screenshots the repo ships — but its source isn't in this repository, so I can speak to what the screenshots show, not to its implementation."* That's a stronger answer than pretending you built (or didn't build) something you can't actually show code for.
 
